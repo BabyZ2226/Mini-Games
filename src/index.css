@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html, body {
+    @apply h-full overflow-hidden;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  #root {
+    @apply h-full overflow-y-auto overflow-x-hidden;
+  }
+
+  /* Allow selection in specific areas if needed */
+  .allow-select {
+    user-select: text;
+  }
+}
+
+@layer utilities {
+  .color-slider {
+    @apply appearance-none bg-transparent cursor-pointer w-full;
+  }
+
+  .color-slider::-webkit-slider-runnable-track {
+    @apply h-10 rounded-xl border border-gray-200 shadow-inner;
+  }
+
+  .color-slider::-webkit-slider-thumb {
+    @apply appearance-none w-10 h-10 bg-white rounded-xl border-4 border-gray-900 shadow-lg -mt-0;
+  }
+
+  .color-slider::-moz-range-thumb {
+    @apply w-10 h-10 bg-white rounded-xl border-4 border-gray-900 shadow-lg border-none;
+  }
+}
